@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
   <head>
-    <title>FunFriendlyCsRuby</title>
+    <title>Fun, Friendly CS</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,11 @@
   </head>
 
   <body>
-    <%= yield %>
+    <main class="App">
+      <h1 class="App-title">Fun, Friendly CS</h1>
+      <div class="ScreenContainer">
+        <%= yield %>
+      </div>
+    </main>
   </body>
 </html>

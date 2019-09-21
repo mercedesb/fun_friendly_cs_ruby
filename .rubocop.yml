@@ -1,0 +1,34 @@
+AllCops:
+  Exclude:
+    - bin/**/*
+    - ciscripts/**/*
+    - db/**/*
+    - scripts/**/*
+    - tmp/**/*
+    - vendor/**/*
+    - node_modules/**/*
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: true
+  Max: 10
+
+Style/Documentation: 
+  Enabled: false
