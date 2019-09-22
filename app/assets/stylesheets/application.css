@@ -30,6 +30,7 @@ body {
   min-height: 100%;
   /* overflow: hidden; */
   font-family: "Poppins";
+  display: flex;
 }
 
 h1,
@@ -51,7 +52,13 @@ p {
   line-height: 1.5em;
 }
 
-button {
+a {
+  color: white;
+}
+
+button,
+.Button,
+input[type="submit"] {
   padding: 0.5em 1em;
   border-radius: 3px;
   border-image: none;
@@ -60,6 +67,27 @@ button {
   font-size: 1em;
   margin-right: 1em;
   margin-bottom: 1em;
+  /* base browser button styles */
+  text-rendering: auto;
+  color: buttontext;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: center;
+  align-items: flex-start;
+  cursor: default;
+  background-color: buttonface;
+  box-sizing: border-box;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+}
+
+a.Button {
+  text-decoration: none;
 }
 
 input {
@@ -106,6 +134,7 @@ fieldset {
 
 .App {
   min-height: 100%;
+  min-width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -124,13 +153,9 @@ fieldset {
 }
 
 .Screen {
-  display: none;
+  display: block;
   flex: 1 1 auto;
   padding: 2em 2em 5em 2em;
-}
-
-.Screen--active {
-  display: block;
 }
 
 .Screen--yellow {
@@ -185,4 +210,11 @@ fieldset {
 
 .TreeContainer {
   display: flex;
+}
+
+.Alert {
+  border: 1px solid white;
+  padding: 5px 10px;
+  background-color: white;
+  color: #252627;
 }
