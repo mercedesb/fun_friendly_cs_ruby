@@ -64,6 +64,11 @@ Rails.application.routes.draw do
     get 'tree/cedric_best_recursive'
   end
 
+  namespace :encapsulation do
+    get '/horse', to: 'horse#index'
+    get 'horse/index'
+    get 'horse/move'
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root 'big_o_notation/cupcakes#index'

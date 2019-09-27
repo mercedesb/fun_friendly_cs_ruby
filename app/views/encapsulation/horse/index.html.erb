@@ -1,0 +1,18 @@
+<section class="Screen Screen--red">
+  <div class="Screen-header">
+    <%= image_tag("Horse.png", alt:"Line drawing of a horse", class: "Screen-thumbnail") %>
+    <h2>Let's move a horse! - Encapsulation example</h2>
+  </div>
+
+  <%= form_with(url: encapsulation_horse_move_path, method: "get", local: true)  do |f| %>
+    <%= f.label 'steps', "Number of steps" %>
+    <%= f.number_field 'steps', required: true %>
+    <%= f.submit 'Walk' %>
+    <%= f.submit 'Trot' %>
+    <%= f.submit 'Canter' %>
+    <%= f.submit 'Gallop' %>
+  <% end %>
+
+  <h2>Our Horse</h2>
+  <div><%= raw(@progress) %></div>
+</section>
