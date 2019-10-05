@@ -75,6 +75,12 @@ Rails.application.routes.draw do
     get 'remote_control/index'
     get 'remote_control/click_button'
   end
+
+  namespace :inheritance do
+    get '/plant', to: 'plant#index'
+    get 'plant/index'
+    get 'plant/learn'
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root 'big_o_notation/cupcakes#index'

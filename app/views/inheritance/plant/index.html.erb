@@ -1,0 +1,46 @@
+<section class="Screen Screen--red">
+  <div class="Screen-header">
+    <%= image_tag("Plant.png", alt:"Line drawing of a plant", class: "Screen-thumbnail") %>
+    <h2>Let's plant a garden! - Inheritance example</h2>
+  </div>
+  <% flash.each do |key, value| %>
+    <div class="Alert Alert-<%= key %>"><%= value %></div>
+  <% end %>
+  <%= form_with(url: inheritance_plant_learn_path, method: "get", local: true)  do |f| %>
+    <fieldset>
+      <legend>
+        <h3>What kind of light does your garden get?</h3>
+      </legend>
+      <div class="Fieldset">
+        <div>
+          <%= f.label "sun", "My garden is sunny" %>
+          <%= f.radio_button "light_needs", "sun" %>
+        </div>
+        <div>
+          <%= f.label "sun", "My garden is shady" %>
+          <%= f.radio_button "light_needs", "shade" %>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>
+        <h3>How does your garden handle moisture ?</h3>
+      </legend>
+      <div class="Fieldset">
+        <div>
+          <%= f.label "wet", "My garden stays wet" %>
+          <%= f.radio_button "water_needs", "wet" %>
+        </div>
+        <div>
+          <%= f.label "wet", "My garden stays dry" %>
+          <%= f.radio_button "water_needs", "dry" %>
+        </div>
+      </div>
+    </fieldset>
+    <%= f.submit 'Learn about plants that work in my garden!' %>
+  <% end %>
+  <h2>Your Garden</h2>
+  <div>
+    <%= raw(@progress) %>
+  </div>
+</section>
