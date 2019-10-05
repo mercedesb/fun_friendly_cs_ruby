@@ -1,0 +1,38 @@
+<section class="Screen Screen--red">
+  <div class="Screen-header">
+    <%= image_tag("YarnCrafts.png", alt:"Line drawing of common yarn crafts", class: "Screen-thumbnail") %>
+    <h2>Let's craft! - Polymorphism example</h2>
+  </div>
+  <% flash.each do |key, value| %>
+    <div class="Alert Alert-<%= key %>"><%= value %></div>
+  <% end %>
+  <%= form_with(url: polymorphism_craft_create_path, method: "get", local: true)  do |f| %>
+    <fieldset>
+      <legend><h3>Choose your favorite yarn craft</h3></legend>
+      <div class="Fieldset">
+        <div>
+          <%= f.label "knit", "Knitting" %>
+          <%= f.radio_button "craft", "knit" %>
+        </div>
+        <div>
+          <%= f.label "crochet", "Crocheting" %>
+          <%= f.radio_button "craft", "crochet" %>
+        </div>
+        <div>
+          <%= f.label "weave", "Weaving" %>
+          <%= f.radio_button "craft", "weave" %>
+        </div>
+      </div>
+    </fieldset>
+    <%= f.label "row_length", "Row length" %>
+    <%= f.number_field 'row_length', required: true %>
+    <%= f.label "number_of_rows", "Number of rows" %>
+    <%= f.number_field 'number_of_rows', required: true %>
+    <div>
+      <%= f.submit 'Create my fabric!' %>
+    </div>
+  <% end %>
+  
+  <h2>Our Fabric</h2>
+  <div><%= raw(@progress) %></div>
+</section>

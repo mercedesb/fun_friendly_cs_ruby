@@ -81,6 +81,12 @@ Rails.application.routes.draw do
     get 'plant/index'
     get 'plant/learn'
   end
+
+  namespace :polymorphism do
+    get '/craft', to: 'craft#index'
+    get 'craft/index'
+    get 'craft/create'
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root 'big_o_notation/cupcakes#index'
