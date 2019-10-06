@@ -1,0 +1,19 @@
+<section class="Screen Screen--yellow">
+  <div class="Screen-header">
+    <%= image_tag("PEZDispenser.png", alt:"Line drawing of a Cookie Monster PEZ dispenser", class: "Screen-thumbnail") %>
+    <h2>Let's eat some candy! - Stack example</h2>
+  </div>
+  <% flash.each do |key, value| %>
+    <div class="Alert Alert-<%= key %>"><%= value %></div>
+  <% end %>
+  <h3>Pushing a new item</h3>
+  <%= form_with(url: stack_stack_create_path, method: "post", local: true)  do |f| %>
+    <%= f.submit 'Add a PEZ' %>
+  <% end %>
+  <h3>Popping an item</h3>
+  <%= form_with(url: stack_stack_delete_path, method: "delete", local: true)  do |f| %>
+    <%= f.submit 'Eat a PEZ' %>
+  <% end %>
+  <h2>Our PEZ Dispenser</h2>
+  <div><%= raw(@progress) %></div>
+</section>

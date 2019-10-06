@@ -36,6 +36,13 @@ Rails.application.routes.draw do
     post 'list/create'
     delete 'list/delete'
   end
+
+  namespace :stack do
+    get '/stack', to: 'stack#index'
+    get 'stack/index'
+    post 'stack/create'
+    delete 'stack/delete'
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root 'big_o_notation/cupcakes#index'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_26_163019) do
+ActiveRecord::Schema.define(version: 2019_09_26_234131) do
 
   create_table "instagram_accounts", force: :cascade do |t|
     t.string "account_handle", limit: 30
@@ -33,7 +33,18 @@ ActiveRecord::Schema.define(version: 2019_09_26_163019) do
     t.index ["next_id"], name: "index_nodes_on_next_id"
   end
 
+  create_table "stacks", force: :cascade do |t|
+    t.integer "head_id"
+    t.integer "tail_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["head_id"], name: "index_stacks_on_head_id"
+    t.index ["tail_id"], name: "index_stacks_on_tail_id"
+  end
+
   add_foreign_key "lists", "nodes", column: "head_id"
   add_foreign_key "lists", "nodes", column: "tail_id"
   add_foreign_key "nodes", "nodes", column: "next_id"
+  add_foreign_key "stacks", "nodes", column: "head_id"
+  add_foreign_key "stacks", "nodes", column: "tail_id"
 end
