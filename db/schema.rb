@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_190_927_191_052) do
+ActiveRecord::Schema.define(version: 20_190_927_200_567) do
   create_table 'instagram_accounts', force: :cascade do |t|
     t.string 'account_handle', limit: 30
     t.boolean 'dog', default: false
@@ -43,6 +43,11 @@ ActiveRecord::Schema.define(version: 20_190_927_191_052) do
     t.index ['tail_id'], name: 'index_queues_on_tail_id'
   end
 
+  create_table 'remote_controls', force: :cascade do |t|
+    t.integer 'television_id', null: false
+    t.index ['television_id'], name: 'index_remote_controls_on_television_id'
+  end
+
   create_table 'stacks', force: :cascade do |t|
     t.integer 'head_id'
     t.integer 'tail_id'
@@ -50,6 +55,11 @@ ActiveRecord::Schema.define(version: 20_190_927_191_052) do
     t.datetime 'updated_at', precision: 6, null: false
     t.index ['head_id'], name: 'index_stacks_on_head_id'
     t.index ['tail_id'], name: 'index_stacks_on_tail_id'
+  end
+
+  create_table 'televisions', force: :cascade do |t|
+    t.boolean 'power', default: false
+    t.integer 'volume', default: 0
   end
 
   create_table 'tree_nodes', force: :cascade do |t|
@@ -70,6 +80,7 @@ ActiveRecord::Schema.define(version: 20_190_927_191_052) do
   add_foreign_key 'nodes', 'nodes', column: 'next_id'
   add_foreign_key 'queues', 'nodes', column: 'head_id'
   add_foreign_key 'queues', 'nodes', column: 'tail_id'
+  add_foreign_key 'remote_controls', 'televisions'
   add_foreign_key 'stacks', 'nodes', column: 'head_id'
   add_foreign_key 'stacks', 'nodes', column: 'tail_id'
   add_foreign_key 'tree_nodes', 'tree_nodes', column: 'parent_id'

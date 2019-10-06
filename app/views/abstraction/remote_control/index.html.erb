@@ -1,0 +1,16 @@
+<section class="Screen Screen--red">
+  <div class="Screen-header">
+    <%= image_tag("RemoteControl.png", alt:"Line drawing of a hand holding a remote control", class: "Screen-thumbnail") %>
+    <h2>Let's turn up the volume! - Abstraction example</h2>
+  </div>
+
+  <%= form_with(url: abstraction_remote_control_click_button_path, method: "get", local: true)  do |f| %>
+    <%= f.hidden_field :remote_id, value: @remote_id %>
+    <%= f.submit 'Power' %>
+    <%= f.submit 'Volume Up' %>
+    <%= f.submit 'Volume Down' %>
+  <% end %>
+
+  <h2>Our TV</h2>
+  <div><%= raw(@progress) %></div>
+</section>

@@ -69,6 +69,12 @@ Rails.application.routes.draw do
     get 'horse/index'
     get 'horse/move'
   end
+
+  namespace :abstraction do
+    get '/remote_control', to: 'remote_control#index'
+    get 'remote_control/index'
+    get 'remote_control/click_button'
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root 'big_o_notation/cupcakes#index'
