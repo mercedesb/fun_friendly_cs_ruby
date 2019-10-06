@@ -1,0 +1,15 @@
+<section class="Screen Screen--purple Screen--active">
+  <div class="Screen-header">
+    <%= image_tag("Cupcake.png", alt:"Line drawing of a cupcake", class: "Screen-thumbnail") %>
+    <h2>Let's make cupcakes! - Big O Notation example</h2>
+  </div>
+  <%= link_to "Preheat oven", big_o_notation_cupcakes_preheat_oven_path(batches: @batches), class: "Button" %>
+  <%= link_to "Combine butter and sugar", big_o_notation_cupcakes_combine_butter_and_sugar_path(batches: @batches), class: "Button" %>
+  <%= link_to "Add eggs", big_o_notation_cupcakes_add_eggs_path(batches: @batches), class: "Button" %>
+  <%= link_to "Combine flour and baking powder", big_o_notation_cupcakes_combine_flour_and_baking_powder_path(batches: @batches), class: "Button" %>
+  <%= link_to "Slowly add milk and flour to butter mixture", big_o_notation_cupcakes_combine_milk_flour_and_butter_mixture_path(batches: @batches), class: "Button" %>
+  <%= link_to "Bake", big_o_notation_cupcakes_bake_path(batches: @batches), class: "Button" %>
+  <%= link_to "Frost with Fibonacci number", big_o_notation_cupcakes_frost_path(batches: @batches), class: "Button" %>
+  <h2>Our baking progress</h2>
+  <div><%= raw(@progress) %></div>
+</section>
