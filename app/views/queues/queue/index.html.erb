@@ -1,0 +1,19 @@
+<section class="Screen Screen--yellow">
+  <div class="Screen-header">
+    <%= image_tag("Feather.png", alt:"Line drawing of a feather", class: "Screen-thumbnail") %>
+    <h2>Let's sign up for Birds of a Feather! - Queue example</h2>
+  </div>
+  <% flash.each do |key, value| %>
+    <div class="Alert Alert-<%= key %>"><%= value %></div>
+  <% end %>
+  <h3>Enqueuing a new item</h3>
+  <%= form_with(url: queues_queue_create_path, method: "post", local: true)  do |f| %>
+    <%= f.submit 'Get in line' %>
+  <% end %>
+  <h3>Dequeuing an item</h3>
+  <%= form_with(url: queues_queue_delete_path, method: "delete", local: true)  do |f| %>
+    <%= f.submit 'Sign up!' %>
+  <% end %>
+  <h2>Our Birds of a Feather Line</h2>
+  <div><%= raw(@progress) %></div>
+</section>

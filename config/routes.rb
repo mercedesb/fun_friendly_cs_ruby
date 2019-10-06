@@ -43,6 +43,13 @@ Rails.application.routes.draw do
     post 'stack/create'
     delete 'stack/delete'
   end
+
+  namespace :queues do
+    get '/queue', to: 'queue#index'
+    get 'queue/index'
+    post 'queue/create'
+    delete 'queue/delete'
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root 'big_o_notation/cupcakes#index'
