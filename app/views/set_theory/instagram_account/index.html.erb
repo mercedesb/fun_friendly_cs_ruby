@@ -1,0 +1,36 @@
+<section class="Screen Screen--purple">
+  <h2>
+    Let's find those cute instagram accounts! - Set theory example
+  </h2>
+  <h3>Add some accounts to our list</h3>
+  <%= form_with(url: set_theory_instagram_account_create_path, method: "post", local: true)  do |f| %>
+    <%= f.label "account_handle", "New account" %>
+    <%= f.text_field "account_handle", required: true%>
+    <fieldset>
+      <legend>
+        <h3>Choose the type of cute animal(s) featured</h3>
+      </legend>
+      <div class="Fieldset">
+        <div>
+          <%= f.label "animal_type_dog", "Dog" %>
+          <%= f.check_box "animal_type_dog" %>
+        </div>
+        <div>
+          <%= f.label "animal_type_cat", "Cat" %>
+          <%= f.check_box "animal_type_cat" %>
+        </div>
+      </div>
+    </fieldset>
+    <%= f.submit 'Add account' %>
+  <% end %>
+  
+  <h3>Let's do some set math</h3>
+  <%= link_to "Find the intersection", { action: "intersection" }, class: "Button" %>
+  <%= link_to "Find the union", { action: "union" }, class: "Button" %>
+  <%= link_to "Find the difference (dogs!)", { action: "difference" }, class: "Button" %>
+  <%= link_to "Find the relative complement (cats!)", { action: "relative_complement" }, class: "Button" %>
+  <%= link_to "Find the symmetric difference", { action: "symmetric_difference" }, class: "Button" %>
+  
+  <h2>The Instagram accounts we love</h2>
+  <div><%= raw(@progress) %></div>
+</section>

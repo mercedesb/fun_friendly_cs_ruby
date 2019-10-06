@@ -12,6 +12,17 @@ Rails.application.routes.draw do
     get 'cupcakes/bake'
     get 'cupcakes/frost'
   end
+
+  namespace :set_theory do
+    get '/instagram_account', to: 'instagram_account#index'
+    get 'instagram_account/index'
+    post 'instagram_account/create'
+    get 'instagram_account/intersection'
+    get 'instagram_account/union'
+    get 'instagram_account/difference'
+    get 'instagram_account/relative_complement'
+    get 'instagram_account/symmetric_difference'
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root 'big_o_notation/cupcakes#index'
