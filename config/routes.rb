@@ -29,6 +29,13 @@ Rails.application.routes.draw do
     get 'nesting_doll_collection/index'
     get 'nesting_doll_collection/count'
   end
+
+  namespace :linked_list do
+    get '/list', to: 'list#index'
+    get 'list/index'
+    post 'list/create'
+    delete 'list/delete'
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root 'big_o_notation/cupcakes#index'

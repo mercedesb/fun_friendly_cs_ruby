@@ -1,0 +1,21 @@
+<section class="Screen Screen--yellow">
+  <div class="Screen-header">
+    <%= image_tag("ScavengerHunt.png", alt:"Line drawing of a scavenger hunt map", class: "Screen-thumbnail") %>
+    <h2>Let's make a scavenger hunt! - Linked List example</h2>
+  </div>
+  <% flash.each do |key, value| %>
+    <div class="Alert Alert-<%= key %>"><%= value %></div>
+  <% end %>
+  <h3>Adding a new item</h3>
+  <%= form_with(url: linked_list_list_create_path, method: "post", local: true)  do |f| %>
+    <%= f.label "add", "New clue" %>
+    <%= f.text_field "add", required: true%>
+    <%= f.submit 'Add Clue' %>
+  <% end %>
+  <h3>Removing an item</h3>
+  <%= form_with(url: linked_list_list_delete_path, method: "delete", local: true)  do |f| %>
+    <%= f.submit 'Remove Clue' %>
+  <% end %>
+  <h2>Our Scavenger Hunt</h2>
+  <div><%= raw(@progress) %></div>
+</section>
