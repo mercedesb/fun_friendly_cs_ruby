@@ -23,6 +23,12 @@ Rails.application.routes.draw do
     get 'instagram_account/relative_complement'
     get 'instagram_account/symmetric_difference'
   end
+
+  namespace :recursion do
+    get '/nesting_doll_collection', to: 'nesting_doll_collection#index'
+    get 'nesting_doll_collection/index'
+    get 'nesting_doll_collection/count'
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root 'big_o_notation/cupcakes#index'
