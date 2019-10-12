@@ -9,7 +9,7 @@ Whether you are a bootcamp grad, self-taught career switcher, or someone who, li
 
 ## Ruby on Rails
 
-All of the code samples are written in [Ruby on Rails](https://rubyonrails.org/).
+All of the code samples are written in [Ruby on Rails](https://rubyonrails.org/). This is a vanilla RoR setup.
 
 ### Ruby version
 Please refer to `.ruby-version` to find the Ruby version for this project. You may want to use a Ruby version management tool to install and set your local Ruby version. I prefer [`rbenv`](https://github.com/rbenv/rbenv).
@@ -22,11 +22,18 @@ I tried to reduce dependencies as much as possible. This project uses [Bundler](
 gem install bundler
 ```
 
+This project uses [Yarn](https://yarnpkg.com) as the package manager. If you don't already have Yarn and are on Mac or Linux, you can use [Homebrew](https://brew.sh/) to install it
+
+```
+brew install yarn
+```
+
 ## Project set up
 ```
 git clone https://github.com/mercedesb/fun_friendly_cs_ruby.git
 cd fun_friendly_cs_ruby
 bundle install
+yarn install
 rails server
 ```
 
