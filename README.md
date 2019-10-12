@@ -1,24 +1,38 @@
-# README
+# Fun, Friendly Computer Science -- Ruby
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Code samples to support my "Fun, Friendly Computer Science" talk.
 
-Things you may want to cover:
+## Talk Abstract
+Computer science concepts like Big O Notation, set theory, data structures, and principles of object-oriented programming sound intimidating, but they don’t have to be! This talk will dive into some fundamental computer science topics and debunk the myth that only ‘real’ programmers know CS.
 
-* Ruby version
+Whether you are a bootcamp grad, self-taught career switcher, or someone who, like me, didn't pay attention in night class, join me as we explore some computer science theory behind the code we write every day through fun illustrations and real-world examples.
 
-* System dependencies
+## Ruby on Rails
 
-* Configuration
+All of the code samples are written in [Ruby on Rails](https://rubyonrails.org/).
 
-* Database creation
+### Ruby version
+Please refer to `.ruby-version` to find the Ruby version for this project. You may want to use a Ruby version management tool to install and set your local Ruby version. I prefer [`rbenv`](https://github.com/rbenv/rbenv).
 
-* Database initialization
+## Dependencies
 
-* How to run the test suite
+I tried to reduce dependencies as much as possible. This project uses [Bundler](https://bundler.io/) to manage the Ruby gems. If you don't already have Bundler, you can install it as you would any other gem.
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+gem install bundler
+```
 
-* Deployment instructions
+## Project set up
+```
+git clone https://github.com/mercedesb/fun_friendly_cs_ruby.git
+cd fun_friendly_cs_ruby
+bundle install
+rails server
+```
 
-* ...
+## Running the tests
+This project uses [Rspec](https://rspec.info/) as the unit testing framework.
+
+```
+bundle exec rspec
+```
