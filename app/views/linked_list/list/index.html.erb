@@ -19,3 +19,7 @@
   <h2>Our Scavenger Hunt</h2>
   <div><%= raw(@progress) %></div>
 </section>
+<div class="ButtonContainer">
+  <%= link_to "Prev", recursion_nesting_doll_collection_path, class: "Button PrevButton" %>
+  <%= link_to "Next", stack_stack_path, class: "Button NextButton" %>
+</div>

@@ -16,3 +16,7 @@
   <h2>Our Horse</h2>
   <div><%= raw(@progress) %></div>
 </section>
+<div class="ButtonContainer">
+  <%= link_to "Prev", tree_tree_path, class: "Button PrevButton" %>
+  <%= link_to "Next", abstraction_remote_control_path, class: "Button NextButton" %>
+</div>

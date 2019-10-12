@@ -13,3 +13,7 @@
   <h2>Our baking progress</h2>
   <div><%= raw(@progress) %></div>
 </section>
+<div class="ButtonContainer">
+  <a class="Button PrevButton" disabled="disabled" href="">Prev</a>
+  <%= link_to "Next", set_theory_instagram_account_path, class: "Button NextButton" %>
+</div>
