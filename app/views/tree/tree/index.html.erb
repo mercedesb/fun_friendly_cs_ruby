@@ -1,0 +1,24 @@
+<section class="Screen Screen--yellow">
+  <div class="Screen-header">
+    <%= image_tag("TriwizardTree.png", alt:"A tree representation of Harry and Cedric's path through the Triwizard maze", class: "Screen-thumbnail") %>
+    <h2>Let's win the triwizard cup! - Binary Tree example</h2>
+  </div>
+  <div class="TreeContainer">
+    <div>
+      <h3>Let's see the possible routes</h3>
+      <%= link_to "Harry's worst route - iteratively", tree_tree_harry_worst_iterative_path, class: "Button" %>
+      <%= link_to "Harry's worst route - recursively", tree_tree_harry_worst_recursive_path, class: "Button" %>
+      <%= link_to "Harry's best route - iteratively", tree_tree_harry_best_iterative_path, class: "Button" %>
+      <%= link_to "Harry's best route - recursively", tree_tree_harry_best_recursive_path, class: "Button" %>
+      <br />
+      <%= link_to "Cedric's worst route - iteratively", tree_tree_cedric_worst_iterative_path, class: "Button" %>
+      <%= link_to "Cedric's worst route - recursively", tree_tree_cedric_worst_recursive_path, class: "Button" %>
+      <%= link_to "Cedric's best route - iteratively", tree_tree_cedric_best_iterative_path, class: "Button" %>
+      <%= link_to "Cedric's best route - recursively", tree_tree_cedric_best_recursive_path, class: "Button" %>
+      <div><%= raw(@progress) %></div>
+    </div>
+    <div>
+      <%= image_tag("TriwizardTree.png", alt:"A tree representation of Harry and Cedric's path through the Triwizard maze") %>
+    </div>
+  </div>
+</section>

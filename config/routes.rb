@@ -50,6 +50,20 @@ Rails.application.routes.draw do
     post 'queue/create'
     delete 'queue/delete'
   end
+
+  namespace :tree do
+    get '/tree', to: 'tree#index'
+    get 'tree/index'
+    get 'tree/harry_worst_iterative'
+    get 'tree/harry_worst_recursive'
+    get 'tree/harry_best_iterative'
+    get 'tree/harry_best_recursive'
+    get 'tree/cedric_worst_iterative'
+    get 'tree/cedric_worst_recursive'
+    get 'tree/cedric_best_iterative'
+    get 'tree/cedric_best_recursive'
+  end
+
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   root 'big_o_notation/cupcakes#index'
